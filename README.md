@@ -6,15 +6,15 @@ I have made a nice script that includes:
 
 1.User Name.
 
-2.License.
+2.License(Which type).
 
 3.MailBox.
 
-4.Total Usage.
+4.Total Usage(In GB).
 
-5.Archive.
+5.Archive(In GB).
 
-6.MFA.
+6.MFA(Which type).
 
 7.Space Left in mailbox on %.
 
