@@ -6,20 +6,9 @@ Connect-AzureAD
 
 ## Intergers ##
 ## 1.ArchiveQuota 2.WindowsEmailAddress 3.Id 4.ProhibitSendQuota ##
-
-$a=Get-Mailbox | select WindowsEmailAddress, `
-  @{name=”ProhibitSendQuota (GB)”; expression={[math]::Round( `
-
- 
-
-  ($_.ProhibitSendQuota.ToString().Split(“(“)[1].Split(” “)[0].Replace(“,”,””)/1GB),2)}}, `
-ItemCount
  
 $b=Get-Mailbox | select WindowsEmailAddress, Id, ProhibitSendQuota, `
   @{name=”ArchiveQuota (GB)”; expression={[math]::Round( `
-
- 
-
   ($_.ArchiveQuota.ToString().Split(“(“)[1].Split(” “)[0].Replace(“,”,””)/1GB),2)}}, `
 ItemCount
 
@@ -29,9 +18,6 @@ ItemCount
 ## Total Usage ##
 $c=Get-Mailbox -ResultSize Unlimited | Get-MailboxStatistics | Select DisplayName,StorageLimitStatus, `
   @{name=”TotalItemSize (GB)”; expression={[math]::Round( `
-
- 
-
   ($_.TotalItemSize.ToString().Split(“(“)[1].Split(” “)[0].Replace(“,”,””)/1GB),2)}}, `
 ItemCount
 
