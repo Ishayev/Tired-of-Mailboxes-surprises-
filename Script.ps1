@@ -1,4 +1,12 @@
+## Import/Install-Modules ##
+uninstall-module AzureAD  # this may or may not be needed, if you have any problems installing/importing modules do this command.
+Install-Module MSOnline
+Install-Module AzureAD
+install-module AzureADPreview
+Import-Module AzureAD
 Import-Module Exchangeonlinemanagement
+
+#####################
 
 Connect-ExchangeOnline 
 Connect-MsolService
